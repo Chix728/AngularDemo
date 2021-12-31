@@ -1,0 +1,9 @@
+table{
+    color: blue;
+    border-collapse: collapse;
+}
+tr td{
+    color: rgb(5, 5, 5);
+    border: solid 2px blue;
+
+}

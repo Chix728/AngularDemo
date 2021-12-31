@@ -15,3 +15,6 @@ _test-output
 _temp
 /bin
 /obj/Debug
+.vs/AngularDemo/v16/.suo
+.vs/AngularDemo/v16/.suo
+obj/Debug/AngularDemo.csproj.AssemblyReference.cache
