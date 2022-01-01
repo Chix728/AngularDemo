@@ -1,4 +1,11 @@
+<h1>Employee Component</h1>
+<hr>
 <table>
+    <tr>
+        <th attr.colspan="{{colSpan}}">
+            Employee Details
+        </th>
+    </tr>
     <tr>
         <td>First Name:</td>
         <td>{{firstName}}</td>
@@ -7,14 +14,28 @@
         <td>Last Name:</td>
         <td>{{lastName}}</td>
     </tr>
-    <tr>
+    <tr *ngIf='showGender'>
         <td>Gender:</td>
         <td>{{gender}}</td>
     </tr>
-    <tr>
+    <tr *ngIf='showAge'>
         <td>Age:</td>
         <td>{{age}}</td>
     </tr>
 </table>
-<button [disabled]="isDisabled" >{{isDisabled?"Disabled Button":"Active Button"}}</button>
-<button (click)="toggleButton">Click Enable or Disable</button>
+<button (click)='showHide()'>click to {{showButtonText}}</button>
+
+<hr>
+<button [disabled]="isEnable" >{{isEnable?"Disable":"Enable"}}</button>
+<hr>
+<button class="colorClass" [class]='classTobeApply' (click)="enableDisable()">Click to {{enableDisableText}}</button>
+<hr>
+<p>class.CSSClassName</p>
+<button [class.boldClass]='isBold'>[class Exaple]</button>
+<hr>
+<p>ngStyle Example</p>
+<button style="font-size: large;color: brown;">Simple style</button>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<button [style.fontSize.px]='fontSize'>[style.fontSize]</button>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<button [ngStyle]='addStyles()'>[ngStyles]</button>
+ 

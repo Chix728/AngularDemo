@@ -1,0 +1,11 @@
+<h1>EventBinding Component</h1>
+<hr>
+<p>This is Event Binding Example!</p>
+<hr>
+<button (click)='onClick()'>Event Binding by (click)</button>
+<!-- canonical form -->
+<button on-click='onClick()'>Event Binding by on-click</button> 
+<hr>
+click button to read more...
+<div *ngIf='ShowDetails'>Detailed view</div>
+<button (click)='toggleDetails()'>{{ShowDetails?"Hide Details ":"Show Details"}}</button>

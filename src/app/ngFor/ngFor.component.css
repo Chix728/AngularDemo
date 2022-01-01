@@ -1,0 +1,5 @@
+table, tr , td, th {
+    border: black solid 3px;
+    border-collapse: collapse;
+    font-size: 30px;
+}

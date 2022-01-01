@@ -1,0 +1,15 @@
+<h1>twoWay Component</h1>
+<hr>
+<div class="propertyBinding">
+    <h3>Property Binding by (input)='name=$event.target.value' </h3>
+    <hr>
+    <label for="name">Name:</label>
+    <input type="text"  [value]='name' (input)='name=$event.target.value' />
+    You have entered: <label style="color: green;font-weight: bold; font-size: 25px;">{{name}}</label>
+    <hr>
+    <h3>Property Binding by [(ngModel)] </h3>
+    <hr>
+    <label for="name">Name:</label>
+    <input type="text"  [value]='name' [(ngModel)]='name' />
+    You have entered: <label style="color: Blue;font-weight: bold; font-size: 25px;">{{name}}</label>
+</div>

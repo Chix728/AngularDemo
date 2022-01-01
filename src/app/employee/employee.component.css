@@ -2,8 +2,17 @@ table{
     color: blue;
     border-collapse: collapse;
 }
-tr td{
+tr td,th {
     color: rgb(5, 5, 5);
     border: solid 2px blue;
 
+}
+.boldClass{
+    font-weight:bold;
+}
+.colorClass{
+    color:red;
+}
+.italicClass{
+    font-style:italic;
 }
