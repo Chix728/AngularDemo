@@ -26,15 +26,15 @@
 <button (click)='showHide()'>click to {{showButtonText}}</button>
 
 <hr>
-<button [disabled]="isEnable" >{{isEnable?"Disable":"Enable"}}</button>
+<button [disabled]="isEnable" >{{isEnable?"Disabled":"Enabled"}}</button>
 <hr>
-<button class="colorClass" [class]='classTobeApply' (click)="enableDisable()">Click to {{enableDisableText}}</button>
+<button class="colorClass" [class]='classTobeApply' (click)="enableDisable()">Click to {{isEnable?"Enable":"Disable"}}</button>
 <hr>
 <p>class.CSSClassName</p>
-<button [class.boldClass]='isBold'>[class Exaple]</button>
+<button [class.boldClass]='isBold'>[[class.boldClass]='isBold' Exaple]</button>
 <hr>
 <p>ngStyle Example</p>
-<button style="font-size: large;color: brown;">Simple style</button>
+<button style="font-size: large;color: brown;">Simple style=</button>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<button [style.fontSize.px]='fontSize'>[style.fontSize]</button>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 <button [ngStyle]='addStyles()'>[ngStyles]</button>

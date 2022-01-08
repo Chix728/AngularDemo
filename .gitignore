@@ -18,3 +18,8 @@ _temp
 .vs/AngularDemo/v16/.suo
 .vs/AngularDemo/v16/.suo
 obj/Debug/AngularDemo.csproj.AssemblyReference.cache
+.csproj
+/obj/Release
+/packages
+/.vs
+/Data/SQLDatabase

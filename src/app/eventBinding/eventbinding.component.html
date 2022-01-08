@@ -4,8 +4,8 @@
 <hr>
 <button (click)='onClick()'>Event Binding by (click)</button>
 <!-- canonical form -->
-<button on-click='onClick()'>Event Binding by on-click</button> 
+<button on-click='onClick()'>Event Binding by on-click[canonical form]</button> 
 <hr>
 click button to read more...
-<div *ngIf='ShowDetails'>Detailed view</div>
+<div *ngIf='ShowDetails'>This is read more section in which informations are displays in more details</div>
 <button (click)='toggleDetails()'>{{ShowDetails?"Hide Details ":"Show Details"}}</button>

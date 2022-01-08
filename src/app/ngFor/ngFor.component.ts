@@ -1,52 +1,46 @@
-import { Component } from "@angular/core";
-import{IEmployee} from '../ngFor/Iemployee';
-import{employeeCountComponent}from '../employeeCount/employeeCount.component'
+import { Component, OnChanges, OnInit, SimpleChanges } from "@angular/core";
+import { IEmployee } from '../ngFor/Iemployee';
+import { employeeCountComponent } from '../employeeCount/employeeCount.component'
+import { employeeList } from "./employeeList.service";
 @Component({
-    selector:'ngFor',
-    templateUrl:'app/ngFor/ngFor.component.html',
-    styleUrls:['app/ngFor/ngFor.component.css']
+    selector: 'ngFor',
+    templateUrl: 'app/ngFor/ngFor.component.html',
+    styleUrls: ['app/ngFor/ngFor.component.css'],
+    providers:[employeeList]
 })
-export class ngForComponent{
+export class ngForComponent implements OnInit {
     /**
      *
      */
-     selectedEmployeeCountRadioButton:string="all";
-     Employees:IEmployee[];
-    constructor() {
-       this.Employees=[
-        {id:1,name:'Chirag',city:'vadodara', gender:'male'},
-        {id:2,name:'Chix',city:'Anand', gender:'male'},
-        {id:3,name:'Chku',city:'Vidhyanagar', gender:'male'},
-        {id:4,name:'Jigo',city:'surat', gender:'male'},
-        {id:5,name:'Girl',city:'Las Vegas', gender:'female'},
-        {id:6,name:'Nagin',city:'Gana', gender:'female'},
-    ]        
+    selectedEmployeeCountRadioButton: string = "all";
+    Employees: IEmployee[];
+    constructor(private _employeeService:employeeList) {
+        
     }
-    onEmployeeCountRadioButtonChange(selectedRadioButtonValue:string):void{
-        this.selectedEmployeeCountRadioButton=selectedRadioButtonValue;
+    ngOnInit(): void {
+        debugger;
+        this._employeeService.getEmployeeList()
+            .subscribe((employeeData) => this.Employees = employeeData);
+        console.log("Data Employee"+this.Employees);
     }
     
-    getEmployees():void{
-        this.Employees=[
-            {id:1,name:'Chirag',city:'vadodara', gender:'male'},
-            {id:2,name:'Chix',city:'Anand', gender:'male'},
-            {id:3,name:'Chku',city:'Vidhyanagar', gender:'male'},
-            {id:4,name:'Jigo',city:'surat', gender:'female'},
-            {id:5,name:'Girl',city:'Las Vegas', gender:'female'},
-            {id:6,name:'Nagin',city:'Gana', gender:'female'},
-            {id:7,name:'Vandro',city:'Gana', gender:'male'},
-        ]
+    onEmployeeCountRadioButtonChange(selectedRadioButtonValue: string): void {
+        this.selectedEmployeeCountRadioButton = selectedRadioButtonValue;
     }
-    trackByEmployeeCode(index:number,employee:any){
+
+    getEmployees(): void {
+        this._employeeService.getEmployeeList().subscribe((data) => this.Employees = data);
+    }
+    trackByEmployeeCode(index: number, employee: any) {
         return employee.id;
     }
-    getTotalEmployeesCount():number{
+    getTotalEmployeesCount(): number {
         return this.Employees.length;
     }
-    getTotalMaleEmployeesCount():number{
-        return this.Employees.filter(e=>e.gender.toLowerCase()==="male").length;
+    getTotalMaleEmployeesCount(): number {
+        return this.Employees.filter(e => e.gender.toLowerCase() === "male").length;
     }
-    getTotalFemaleEmployeesCount():number{
-        return this.Employees.filter(e=>e.gender.toLowerCase()==="female").length;
+    getTotalFemaleEmployeesCount(): number {
+        return this.Employees.filter(e => e.gender.toLowerCase() === "female").length;
     }
 }
