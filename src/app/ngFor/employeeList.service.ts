@@ -3,6 +3,8 @@ import { IEmployee } from "./Iemployee";
 import { Http , Response} from "@angular/http"
 import { Observable } from "rxjs/observable"
 import "rxjs/add/operator/map"
+import "rxjs/add/operator/catch"
+import { error } from "console";
 
 
 @Injectable()
@@ -12,7 +14,8 @@ export class employeeList {
     }
     getEmployeeList(): Observable<IEmployee[]> {
         return this._http.get("http://localhost:63804/api/employees")
-            .map((response: Response) => <IEmployee[]>response.json());
+            .map((response: Response) => <IEmployee[]>response.json())
+            .catch(this.handleError);
         //return [
         //    { id: 1, name: 'Chirag', city: 'vadodara', gender: 'male' },
         //    { id: 2, name: 'Chix', city: 'Anand', gender: 'male' },
@@ -22,5 +25,9 @@ export class employeeList {
         //    { id: 6, name: 'Susane', city: 'Baja California', gender: 'female' },
         //    { id: 7, name: 'Chikky', city: 'Laos', gender: 'male' },
         //];
+    }
+    handleError(error: Response) {
+        console.error(error);
+        return Observable.throw(error);
     }
 }

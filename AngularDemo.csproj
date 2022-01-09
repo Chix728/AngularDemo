@@ -75,9 +75,29 @@
     <Content Include="src\app\app.component.js" />
     <Content Include="src\app\app.component.spec.js" />
     <Content Include="src\app\app.module.js" />
+    <Content Include="src\app\assets\icon.jpg" />
+    <Content Include="src\app\employeeCount\employeeCount.component.css" />
+    <Content Include="src\app\employeeCount\employeeCount.component.html" />
+    <Content Include="src\app\employeeCount\employeeCount.component.js" />
     <Content Include="src\app\employee\employee.component.css" />
     <Content Include="src\app\employee\employee.component.html" />
     <Content Include="src\app\employee\employee.component.js" />
+    <Content Include="src\app\eventBinding\eventbinding.component.css" />
+    <Content Include="src\app\eventBinding\eventbinding.component.html" />
+    <Content Include="src\app\eventBinding\eventbinding.component.js" />
+    <Content Include="src\app\ngFor\employeeList.service.js" />
+    <Content Include="src\app\ngFor\employeeTitle.pipe.js" />
+    <Content Include="src\app\ngFor\Iemployee.js" />
+    <Content Include="src\app\ngFor\ngFor.component.css" />
+    <Content Include="src\app\ngFor\ngFor.component.html" />
+    <Content Include="src\app\ngFor\ngFor.component.js" />
+    <Content Include="src\app\ngOnChangeHook\ngOnChange.component.js" />
+    <Content Include="src\app\ngPipe\ngPipe.component.css" />
+    <Content Include="src\app\ngPipe\ngPipe.component.html" />
+    <Content Include="src\app\ngPipe\ngPipe.component.js" />
+    <Content Include="src\app\twoWayBinding\twoWayBinding.componenet.js" />
+    <Content Include="src\app\twoWayBinding\twoWayBinding.component.css" />
+    <Content Include="src\app\twoWayBinding\twoWayBinding.component.html" />
     <Content Include="src\favicon.ico" />
     <Content Include="src\index.html" />
     <Content Include="src\styles.css" />
@@ -99,6 +119,15 @@
     <Content Include="src\app\app.component.spec.js.map" />
     <Content Include="src\app\app.module.js.map" />
     <Content Include="src\app\employee\employee.component.js.map" />
+    <Content Include="src\app\employeeCount\employeeCount.component.js.map" />
+    <Content Include="src\app\eventBinding\eventbinding.component.js.map" />
+    <Content Include="src\app\ngFor\employeeList.service.js.map" />
+    <Content Include="src\app\ngFor\employeeTitle.pipe.js.map" />
+    <Content Include="src\app\ngFor\Iemployee.js.map" />
+    <Content Include="src\app\ngFor\ngFor.component.js.map" />
+    <Content Include="src\app\ngOnChangeHook\ngOnChange.component.js.map" />
+    <Content Include="src\app\ngPipe\ngPipe.component.js.map" />
+    <Content Include="src\app\twoWayBinding\twoWayBinding.componenet.js.map" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -107,10 +136,21 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <TypeScriptCompile Include="src\app\404\pageNotFound.ts" />
     <TypeScriptCompile Include="src\app\app.component.spec.ts" />
     <TypeScriptCompile Include="src\app\app.component.ts" />
     <TypeScriptCompile Include="src\app\app.module.ts" />
+    <TypeScriptCompile Include="src\app\employeeCount\employeeCount.component.ts" />
     <TypeScriptCompile Include="src\app\employee\employee.component.ts" />
+    <TypeScriptCompile Include="src\app\eventBinding\eventbinding.component.ts" />
+    <TypeScriptCompile Include="src\app\Home\home.component.ts" />
+    <TypeScriptCompile Include="src\app\ngFor\employeeList.service.ts" />
+    <TypeScriptCompile Include="src\app\ngFor\employeeTitle.pipe.ts" />
+    <TypeScriptCompile Include="src\app\ngFor\Iemployee.ts" />
+    <TypeScriptCompile Include="src\app\ngFor\ngFor.component.ts" />
+    <TypeScriptCompile Include="src\app\ngOnChangeHook\ngOnChange.component.ts" />
+    <TypeScriptCompile Include="src\app\ngPipe\ngPipe.component.ts" />
+    <TypeScriptCompile Include="src\app\twoWayBinding\twoWayBinding.componenet.ts" />
     <TypeScriptCompile Include="src\main.ts" />
   </ItemGroup>
   <ItemGroup>

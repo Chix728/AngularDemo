@@ -19,7 +19,7 @@
             *ngFor='let employee of Employees trackBy:trackByEmployeeCode;let i=index; let isFirst=first;let isLast=last'>
             <tr *ngIf="selectedEmployeeCountRadioButton=='all' || selectedEmployeeCountRadioButton==employee.gender">
                 <td>{{employee.id}}</td>
-                <td>{{employee.name }}</td><!-- | employeeTitle :employee.gender-->
+                <td>{{employee.name | employeeTitle :employee.gender}}</td> 
                 <td>{{employee.city}}</td>
                 <td>{{employee.gender}}</td>
                 <td>{{i}}</td>
@@ -28,7 +28,7 @@
             </tr>
         </ng-container>
         <tr *ngIf="!Employees || Employees.length==0">
-            <strong>No recoderds to show</strong>
+            {{statusMessage}}
         </tr>
 
     </tbody>
