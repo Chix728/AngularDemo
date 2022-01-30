@@ -7,25 +7,41 @@
 <!--<on-change></on-change>-->
 <div class="container-fluid  p-0" style="font-family: monospace;">
     <ul class="nav nav-tabs" style="z-index:9999;">
-        <li>
+        <li routerLinkActive="active">
             <a style="padding: 15px;" routerLink="home">Home</a>
         </li>
-        <li>
+        <li routerLinkActive="active">
             <a style="padding: 15px;" routerLink="employee">Employee List</a>
         </li>
-        <li>
+        <li routerLinkActive="active">
             <a style="padding: 15px;" routerLink="eventBinding">Event Binding</a>
         </li>
-        <li>
+        <li routerLinkActive="active">
             <a style="padding: 15px;" routerLink="twoWayBinding">[(ngModel)]</a>
         </li>
-        <li>
+        <li routerLinkActive="active">
             <a style="padding: 15px;" routerLink="ngFor">ngFor</a>
         </li>
 
     </ul>
     <router-outlet></router-outlet>
+    
 </div>
+<footer>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-4">
+                <strong>&copy;Chikky</strong>-{{CurrentYear}}
+            </div>
+            <div class="col-4">
+                <address><i class="bi bi-geo-alt"></i>Bajwa,Vadodara,India-391310</address>
+            </div>
+            <div class="col-4">
+                <strong><i class="bi bi-telephone"></i>+919313739867</strong>
+            </div>
+        </div>
+    </div>
+</footer>
 <!--<style>
     li.a {
         padding: 5px

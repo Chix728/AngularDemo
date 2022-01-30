@@ -9,6 +9,7 @@ var core_1 = require("@angular/core");
 var AppComponent = (function () {
     function AppComponent() {
         this.title = "Angular Tutorial";
+        this.CurrentYear = new Date().getFullYear();
     }
     return AppComponent;
 }());

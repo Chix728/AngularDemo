@@ -33,4 +33,9 @@ li {
 .active {
     background-color: #4CAF50;
     font-weight:bold;
+    border-radius:5px;
+}
+footer {
+    background-color: #003487;
+    color:white;
 }
