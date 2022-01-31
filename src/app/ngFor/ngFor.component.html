@@ -6,25 +6,56 @@
 <hr>
 <table>
     <thead>
-        <th>Id</th>
-        <th>Name</th>
-        <th>City</th>
-        <th>Gender</th>
-        <th>Index</th>
-        <th>IsFirst</th>
-        <th>isLast</th>
+    <th>Id</th>
+    <th>Name</th>
+    <th>City</th>
+    <th>Gender</th>
+    <th>Index</th>
+    <th>IsFirst</th>
+    <th>isLast</th>
+    <th>Details</th>
     </thead>
     <tbody>
-        <ng-container
-            *ngFor='let employee of Employees trackBy:trackByEmployeeCode;let i=index; let isFirst=first;let isLast=last'>
+        <ng-container *ngFor='let employee of Employees trackBy:trackByEmployeeCode;let i=index; let isFirst=first;let isLast=last'>
             <tr *ngIf="selectedEmployeeCountRadioButton=='all' || selectedEmployeeCountRadioButton==employee.gender">
-                <td>{{employee.Id}}</td>
-                <td>{{employee.Name | employeeTitle :employee.Gender}}</td> 
+                <td><a [routerLink]="['/employee',employee.Id]">{{employee.Id}}</a></td>
+                <td>{{employee.Name | employeeTitle :employee.Gender}}</td>
                 <td>{{employee.City}}</td>
                 <td>{{employee.Gender}}</td>
                 <td>{{i}}</td>
                 <td>{{isFirst}}</td>
                 <td>{{isLast}}</td>
+                <td>
+
+                    <!-- Button trigger modal -->
+                    <button type="button" class="btn btn-primary" (submit)="get" data-toggle="modal" data-target="#exampleModal">
+                        <a class="bi bi-eye-fill"> </a>
+                    </button>
+                    <!--<div *ngIf="employee">-->
+                    <div *ngIf="employee" class="modal" tabindex="-1" role="dialog" id="exampleModal">
+                        <div id ="{{employee.Id}}" class="modal-dialog" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title">Employee Details For the Id:{{employee.Id}}</h5>
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
+                                </div>
+                                <div class="modal-body">
+                                    {{employee.Name}}
+                                    {{employee.City}}
+                                    {{employee.Gender}}
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-primary">Save changes</button>
+                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!--</button>-->
+
+                </td>
             </tr>
         </ng-container>
         <tr *ngIf="!Employees || Employees.length==0">
@@ -33,4 +64,27 @@
 
     </tbody>
 </table>
+<div *ngIf="employee">
+<div class="modal" tabindex="-1" role="dialog" id="exampleModal">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Employee Details For the Id:{{Employee.Id}}</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                {{Employee.Name}}
+                {{Employee.City}}
+                {{Employee.Gender}}
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary">Save changes</button>
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div></div>
+
 <button (click)="getEmployees()">Refresh Employees</button>
